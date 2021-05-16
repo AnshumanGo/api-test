@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'org.test'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // https://mvnrepository.com/artifact/org.testng/testng
+    implementation group: 'org.testng', name: 'testng', version: '7.4.0'
+
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    // https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator
+    implementation group: 'io.rest-assured', name: 'json-schema-validator', version: '4.3.3'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.3'
+
+    // https://mvnrepository.com/artifact/org.uncommons/reportng
+    testImplementation group: 'org.uncommons', name: 'reportng', version: '1.1.4'
+}
+
+test {
+    useTestNG()
+}
